@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlayerView : UIView
+@protocol PlayerViewDelegate;
 
-@property (strong, nonatomic) NSMutableArray *topBars;
+@interface PlayerView : UIView
 
 @property (assign, nonatomic) BOOL isFullScreen;
 @property (assign, nonatomic) BOOL hasTimer;
@@ -32,5 +32,27 @@
 @property (strong, nonatomic) UIButton *up_down_btn;
 @property (strong, nonatomic) UIButton *turn_left_right_btn;
 @property (strong, nonatomic) UIButton *turn_up_down_btn;
+@property (strong, nonatomic) UIButton *button3;
+@property (strong, nonatomic) UIButton *button4;
+
+@property (strong, nonatomic) UIButton *button5;
+@property (strong, nonatomic) UIButton *button6;
+@property (strong, nonatomic) UIButton *button7;
+@property (strong, nonatomic) UIButton *button8;
+@property (strong, nonatomic) UIButton *button9;
+
+@property (strong, nonatomic) UISlider *volumeSlider;
+
+@property (strong, nonatomic) UIActivityIndicatorView *activityIndicatorView;
+
+@property (weak, nonatomic) id<PlayerViewDelegate> delegate;
+
+@end
+
+@protocol PlayerViewDelegate <NSObject>
+
+- (void)playerView:(PlayerView *)playerView clikedOnButtonAtIndex:(NSUInteger)index;
+- (void)playerView:(PlayerView *)playerView didSwitchTalkStatus:(BOOL)talking;
+- (void)playerView:(PlayerView *)playerView didChangedVolumeWithValue:(float)value;
 
 @end

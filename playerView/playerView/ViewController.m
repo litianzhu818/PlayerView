@@ -32,7 +32,7 @@
     NSLog(NSStringFromCGRect(self.view.frame));
     [UIView animateWithDuration:duration animations:^{
         if(UIDeviceOrientationIsLandscape(toInterfaceOrientation)) {
-            self.playerView.frame = CGRectMake(0, 20, self.height, self.width - 20);
+            self.playerView.frame = CGRectMake(0, 0, self.height, self.width);
         } else {
             self.playerView.frame = CGRectMake(0, 88, self.width, 268);
         }
