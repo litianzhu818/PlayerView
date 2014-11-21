@@ -10,6 +10,8 @@
 
 @interface PlayerView : UIView
 
+@property (strong, nonatomic) NSMutableArray *topBars;
+
 @property (assign, nonatomic) BOOL isFullScreen;
 @property (assign, nonatomic) BOOL hasTimer;
 @property (strong, nonatomic) NSTimer *timer;

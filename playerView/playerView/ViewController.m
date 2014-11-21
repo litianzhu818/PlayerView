@@ -46,7 +46,7 @@
 {
     self.width = self.view.frame.size.width;
     self.height = self.view.frame.size.height;
-//    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = [UIColor blackColor];
     self.playerView = [[PlayerView alloc] initWithFrame:CGRectMake(0, 88, self.width, 268)];
     [self.view addSubview:self.playerView];
 //    [self.playerView setHidden:YES];

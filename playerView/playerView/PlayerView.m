@@ -67,16 +67,17 @@
 
 - (void)initUI
 {
+    self.topBars = [NSMutableArray array];
     /*****************init the topBarView*******************/
     self.topBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, BAR_WIDTH, BAR_HEIGHT)];
-    self.topBarView.backgroundColor = [UIColor yellowColor];
+//    self.topBarView.backgroundColor = [UIColor yellowColor];
     self.topBarView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self addSubview:self.topBarView];
     
     //init the close button
     self.closeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.closeButton.frame = CGRectMake(BUTTON_MARGIN_WIDTH, MARGIN_WIDTH, BUTTON_WIDTH, BUTTON_HEIGHT);
-    self.closeButton.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin;
+//    self.closeButton.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin;
     self.closeButton.tag = 1;
     [self.closeButton addTarget:self action:@selector(clikedOnButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.closeButton setSelected:NO];
@@ -85,11 +86,12 @@
     [self.closeButton setTintColor:[UIColor clearColor]];
     [self.closeButton setUserInteractionEnabled:YES];
     [self.topBarView addSubview:self.closeButton];
+    [self.topBars addObject:self.closeButton];
     
     //the button1
     self.button1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.button1.frame = CGRectMake(BUTTON_MARGIN_WIDTH + VIEW_END_X(self.closeButton), MARGIN_WIDTH, BUTTON_WIDTH, BUTTON_HEIGHT);
-    self.button1.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin;
+//    self.button1.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin;
     self.button1.tag = 2;
     [self.button1 addTarget:self action:@selector(clikedOnButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.button1 setSelected:NO];
@@ -98,10 +100,12 @@
     [self.button1 setTintColor:[UIColor clearColor]];
     [self.button1 setUserInteractionEnabled:YES];
     [self.topBarView addSubview:self.button1];
+    [self.topBars addObject:self.button1];
+    
     //the button2
     self.button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.button2.frame = CGRectMake(BUTTON_MARGIN_WIDTH + VIEW_END_X(self.button1), MARGIN_WIDTH, BUTTON_WIDTH, BUTTON_HEIGHT);
-    self.button2.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin;
+//    self.button2.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin;
     self.button2.tag = 3;
     [self.button2 addTarget:self action:@selector(clikedOnButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.button2 setSelected:NO];
@@ -110,11 +114,12 @@
     [self.button2 setTintColor:[UIColor clearColor]];
     [self.button2 setUserInteractionEnabled:YES];
     [self.topBarView addSubview:self.button2];
+    [self.topBars addObject:self.button2];
     
     //the left_right
     self.left_right_btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.left_right_btn.frame = CGRectMake(BUTTON_MARGIN_WIDTH + VIEW_END_X(self.button2), MARGIN_WIDTH, BUTTON_WIDTH, BUTTON_HEIGHT);
-    self.left_right_btn.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin;
+//    self.left_right_btn.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin;
     self.left_right_btn.tag = 4;
     [self.left_right_btn addTarget:self action:@selector(clikedOnButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.left_right_btn setSelected:NO];
@@ -123,11 +128,12 @@
     [self.left_right_btn setTintColor:[UIColor clearColor]];
     [self.left_right_btn setUserInteractionEnabled:YES];
     [self.topBarView addSubview:self.left_right_btn];
+    [self.topBars addObject:self.left_right_btn];
     
     //the up_down_btn
     self.up_down_btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.up_down_btn.frame = CGRectMake(BUTTON_MARGIN_WIDTH + VIEW_END_X(self.left_right_btn), MARGIN_WIDTH, BUTTON_WIDTH, BUTTON_HEIGHT);
-    self.up_down_btn.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin;
+//    self.up_down_btn.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin;
     self.up_down_btn.tag = 5;
     [self.up_down_btn addTarget:self action:@selector(clikedOnButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.up_down_btn setSelected:NO];
@@ -136,11 +142,12 @@
     [self.up_down_btn setTintColor:[UIColor clearColor]];
     [self.up_down_btn setUserInteractionEnabled:YES];
     [self.topBarView addSubview:self.up_down_btn];
+    [self.topBars addObject:self.up_down_btn];
     
     //the turn_left_right_btn
     self.turn_left_right_btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.turn_left_right_btn.frame = CGRectMake(BUTTON_MARGIN_WIDTH + VIEW_END_X(self.up_down_btn), MARGIN_WIDTH, BUTTON_WIDTH, BUTTON_HEIGHT);
-    self.turn_left_right_btn.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin;
+//    self.turn_left_right_btn.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin;
     self.turn_left_right_btn.tag = 6;
     [self.turn_left_right_btn addTarget:self action:@selector(clikedOnButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.turn_left_right_btn setSelected:NO];
@@ -149,13 +156,14 @@
     [self.turn_left_right_btn setTintColor:[UIColor clearColor]];
     [self.turn_left_right_btn setUserInteractionEnabled:YES];
     [self.topBarView addSubview:self.turn_left_right_btn];
+    [self.topBars addObject:self.turn_left_right_btn];
     
     
     //the turn_up_down_btn
     self.turn_up_down_btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.turn_up_down_btn.frame = CGRectMake(BUTTON_MARGIN_WIDTH + VIEW_END_X(self.turn_left_right_btn), MARGIN_WIDTH, BUTTON_WIDTH, BUTTON_HEIGHT);
-    self.turn_up_down_btn.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin;
-    self.turn_up_down_btn.tag = 6;
+//    self.turn_up_down_btn.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin;
+    self.turn_up_down_btn.tag = 7;
     [self.turn_up_down_btn addTarget:self action:@selector(clikedOnButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.turn_up_down_btn setSelected:NO];
     [self.turn_up_down_btn setBackgroundImage:[UIImage imageNamed:@"power_sel"] forState:UIControlStateSelected];
@@ -163,6 +171,7 @@
     [self.turn_up_down_btn setTintColor:[UIColor clearColor]];
     [self.turn_up_down_btn setUserInteractionEnabled:YES];
     [self.topBarView addSubview:self.turn_up_down_btn];
+    [self.topBars addObject:self.turn_up_down_btn];
     
     
     
@@ -197,7 +206,7 @@
     /*****************init the bottomBarView*******************/
     self.bottomBarView = [[UIView alloc] initWithFrame:CGRectMake(0, BAR_HEIGHT+PLAYER_VIEW_HEIGHT, BAR_WIDTH, BAR_HEIGHT)];
     self.bottomBarView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin;
-    self.bottomBarView.backgroundColor = [UIColor redColor];
+//    self.bottomBarView.backgroundColor = [UIColor redColor];
     [self addSubview:self.bottomBarView];
     
     
@@ -217,7 +226,16 @@
 
 -(void) setupConstraints
 {
+    [self.topBars keepSizesEqual]; // 30 constraints
+    self.topBars.keepInsets.min = BUTTON_MARGIN_WIDTH; // 64 constraints
     
+    
+    self.closeButton.keepLeftInset.equal = BUTTON_MARGIN_WIDTH;
+    self.turn_up_down_btn.keepRightInset.equal = BUTTON_MARGIN_WIDTH;
+    
+    [self.topBars keepHorizontalOffsets:BUTTON_MARGIN_WIDTH +keepHigh];
+    [self.topBars keepHorizontalAlignments:0 +keepHigh];
+
 }
 - (void)hidenBarsWhenShowing
 {
@@ -284,8 +302,8 @@
 {
     UIButton *btn = (UIButton *)sender;
 
-    NSLog(@"YES,You cliked on me!");
-    [self showBars:NO];
+    NSLog(@"YES,You cliked on me!  %d",btn.tag);
+//    [self showBars:NO];
 }
 
 @end
