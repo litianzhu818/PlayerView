@@ -92,6 +92,7 @@
     self.bottomBarView.backgroundColor = [UIColor redColor];
     [self addSubview:self.bottomBarView];
     
+    
     [self setupConstraints];
     [self showBars:YES];
 }
