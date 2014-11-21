@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface PlayerView : UIView
-@property (strong, nonatomic) UIView *bgView;
+
+@property (strong, nonatomic) UIView *topBarView;
+@property (strong, nonatomic) UIView *bottomBarView;
 @property (strong, nonatomic) UIImageView *playerView;
 
+//buttons
 @property (strong, nonatomic) UIButton *closeButton;
 
 @end

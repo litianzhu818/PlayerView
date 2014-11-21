@@ -32,9 +32,9 @@
     NSLog(NSStringFromCGRect(self.view.frame));
     [UIView animateWithDuration:duration animations:^{
         if(UIDeviceOrientationIsLandscape(toInterfaceOrientation)) {
-            self.playerView.frame = CGRectMake(0, 0, self.height, self.width);
+            self.playerView.frame = CGRectMake(0, 20, self.height, self.width - 20);
         } else {
-            self.playerView.frame = CGRectMake(0, 0, self.width, self.height);
+            self.playerView.frame = CGRectMake(0, 140, self.width, 176);
         }
     } completion:^(BOOL finished) {
         
@@ -46,7 +46,8 @@
 {
     self.width = self.view.frame.size.width;
     self.height = self.view.frame.size.height;
-    self.playerView = [[PlayerView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+//    self.view.backgroundColor = [UIColor blackColor];
+    self.playerView = [[PlayerView alloc] initWithFrame:CGRectMake(0, 140, self.width, 176)];
     [self.view addSubview:self.playerView];
 }
 
